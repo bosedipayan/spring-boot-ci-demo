@@ -31,9 +31,6 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-    - name: Verify Target Folder
-      run: ls -la target
-
     - name: Build Docker Image
       run: |
         cd demo
