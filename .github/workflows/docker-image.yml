@@ -36,7 +36,8 @@ jobs:
 
     - name: Build Docker Image
       run: |
-        docker build -f demo/Dockerfile -t my-image-name:latest demo
+        cd demo
+        docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/spring-boot-ci-demo:latest .
 
     - name: Push Image to Docker Hub
       run: docker push -t ${{ secrets.DOCKERHUB_USERNAME }}/spring-boot-ci-demo:latest
